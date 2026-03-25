@@ -38,7 +38,7 @@ export function DatePickerDemo() {
           tone="ocean"
           disabled={{ dayOfWeek: [0, 6] }}
           modifiersClassNames={{
-            today: "ring-1 ring-slate-300",
+            today: "text-red-500",
           }}
         />
 

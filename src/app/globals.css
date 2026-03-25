@@ -36,10 +36,8 @@ body {
 }
 
 .rdp-theme {
-  --rdp-day-height: 32px;
+  /* --rdp-day-height: 32px;
   --rdp-day-width: 32px;
-  --rdp-day_button-height: 32px;
-  --rdp-day_button-width: 32px;
   --rdp-nav-height: 36px;
   --rdp-nav_button-height: 32px;
   --rdp-nav_button-width: 32px;
@@ -50,5 +48,5 @@ body {
   --rdp-outside-opacity: 0.55;
   --rdp-today-color: #114f84;
   --rdp-accent-color: #0a5ea8;
-  --rdp-accent-background-color: #dceeff;
+  --rdp-accent-background-color: #dceeff; */
 }
