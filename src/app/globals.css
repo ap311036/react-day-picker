@@ -1,4 +1,14 @@
+/* .rdp-theme .rdp-day {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+} */
 @import "tailwindcss";
+@import "react-day-picker/style.css";
 
 :root {
   --background: #ffffff;
@@ -22,5 +32,23 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.rdp-theme {
+  --rdp-day-height: 32px;
+  --rdp-day-width: 32px;
+  --rdp-day_button-height: 32px;
+  --rdp-day_button-width: 32px;
+  --rdp-nav-height: 36px;
+  --rdp-nav_button-height: 32px;
+  --rdp-nav_button-width: 32px;
+  --rdp-weekday-padding: 0.45rem 0;
+  --rdp-months-gap: 1.25rem;
+  --rdp-dropdown-gap: 0.5rem;
+  --rdp-disabled-opacity: 0.4;
+  --rdp-outside-opacity: 0.55;
+  --rdp-today-color: #114f84;
+  --rdp-accent-color: #0a5ea8;
+  --rdp-accent-background-color: #dceeff;
 }
