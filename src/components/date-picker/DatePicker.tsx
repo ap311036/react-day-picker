@@ -102,7 +102,7 @@ export function CustomDatePicker({
     selected: `${defaults.selected} !bg-green-500 !text-white !rounded-full font-semibold`,
     today: `${defaults.today} font-semibold`,
     outside: `${defaults.outside} text-slate-400`,
-    disabled: `${defaults.disabled} cursor-not-allowed text-slate-300 line-through`,
+    disabled: `${defaults.disabled} [&>button]:!cursor-not-allowed text-slate-300 line-through`,
     range_start: `${defaults.range_start} bg-[var(--rdp-accent-background-color)]`,
     range_middle: `${defaults.range_middle} bg-[var(--rdp-accent-background-color)]`,
     range_end: `${defaults.range_end} bg-[var(--rdp-accent-background-color)]`,
