@@ -76,7 +76,7 @@ export function CustomDatePicker({
   const baseClassNames: Partial<ClassNames> = {
     root: `${defaults.root} rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm inline-block`,
     month_caption: `${defaults.month_caption} mb-3 relative flex items-center justify-center gap-2`,
-    nav: `${defaults.nav} absolute left-0 top-0 w-full flex items-center justify-between px-1`,
+    nav: `${defaults.nav} absolute z-1 left-0 top-0 w-full flex items-center justify-between px-1`,
     button_previous: `${defaults.button_previous} rounded-lg border border-slate-200 bg-white px-2 py-1 text-slate-700 transition hover:bg-slate-100`,
     caption_label: `${defaults.caption_label} mx-auto text-base font-semibold text-slate-900 text-center`,
     button_next: `${defaults.button_next} rounded-lg border border-slate-200 bg-white px-2 py-1 text-slate-700 transition hover:bg-slate-100`,
