@@ -1,8 +1,10 @@
 import { DatePickerDemo } from "@/components/date-picker/DatePickerDemo";
 
 export default function Home() {
+  const initialNowISO = new Date().toISOString();
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-slate-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-sky-50 via-slate-50 to-white">
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-10">
         <header className="space-y-3">
           <span className="inline-flex rounded-full border border-sky-200 bg-sky-100 px-3 py-1 text-xs font-semibold tracking-wide text-sky-900">
@@ -17,7 +19,7 @@ export default function Home() {
           </p>
         </header>
 
-        <DatePickerDemo />
+        <DatePickerDemo initialNowISO={initialNowISO} />
       </main>
     </div>
   );

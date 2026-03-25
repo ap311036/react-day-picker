@@ -35,8 +35,8 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
 }
 
-.rdp-theme {
-  /* --rdp-day-height: 32px;
+/* .rdp-theme {
+  --rdp-day-height: 32px;
   --rdp-day-width: 32px;
   --rdp-nav-height: 36px;
   --rdp-nav_button-height: 32px;
@@ -48,5 +48,17 @@ body {
   --rdp-outside-opacity: 0.55;
   --rdp-today-color: #114f84;
   --rdp-accent-color: #0a5ea8;
-  --rdp-accent-background-color: #dceeff; */
+  --rdp-accent-background-color: #dceeff;
+} */
+
+/* floating label 條件：focus、有值、或同層出現 id 結尾為 -picker 的節點 */
+.picker-input-shell input:not(:placeholder-shown) + .picker-floating-label,
+.picker-input-shell:has(input:focus) .picker-floating-label,
+.picker-input-shell:has(input:not(:placeholder-shown)) .picker-floating-label,
+.picker-input-shell:has([id$="-picker"]) .picker-floating-label {
+  transform: translateY(-1.25rem) scale(0.9);
+  transform-origin: left top;
+  background: #ffffff;
+  padding-inline: 0.25rem;
+  color: rgb(2 132 199);
 }

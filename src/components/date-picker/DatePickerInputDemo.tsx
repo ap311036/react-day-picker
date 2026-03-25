@@ -53,39 +53,48 @@ export function DatePickerInputDemo() {
 
   return (
     <div className="relative max-w-xs">
-      <label htmlFor={id} className="block text-sm font-medium text-slate-700 mb-1">
+      {/* 上方說明文字 */}
+      <div className="block text-sm font-medium text-slate-700 mb-1">
         彈出式日期選擇器（input focus 彈出，點外部自動收合）
-      </label>
-      <input
-        ref={inputRef}
-        id={id}
-        type="text"
-        role="combobox"
-        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-sky-400"
-        value={date ? format(date, "yyyy-MM-dd") : ""}
-        placeholder="請選擇日期"
-        readOnly
-        onFocus={handleInputFocus}
-        // onBlur={handleInputBlur}
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        aria-controls={open ? `${id}-picker` : undefined}
-      />
-      {open && (
-        <div
-          ref={pickerRef}
-          id={`${id}-picker`}
-          className="absolute left-0 z-50 mt-2 w-max min-w-65 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl"
+      </div>
+      <div className="relative picker-input-shell">
+        <input
+          ref={inputRef}
+          id={id}
+          type="text"
+          role="combobox"
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-sky-400 peer bg-transparent"
+          value={date ? format(date, "yyyy/MM/dd") : ""}
+          placeholder=" "
+          readOnly
+          onFocus={handleInputFocus}
+          // onBlur={handleInputBlur}
+          aria-haspopup="dialog"
+          aria-expanded={open}
+          aria-controls={open ? `${id}-picker` : undefined}
+        />
+        {/* floating label，純 CSS 控制：input:focus 或有值時浮起 */}
+        <label
+          htmlFor={id}
+          className="picker-floating-label absolute left-3 top-2 text-slate-400 pointer-events-none transition-all duration-200"
         >
-          <CustomDatePicker
-            mode="single"
-            selected={date}
-            onSelect={handleSelect}
-            tone="ocean"
-            initialFocus
-          />
-        </div>
-      )}
+          請選擇日期
+        </label>
+        {open && (
+          <div
+            ref={pickerRef}
+            id={`${id}-picker`}
+            className="absolute left-0 z-50 mt-2 w-max min-w-65 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl"
+          >
+            <CustomDatePicker
+              mode="single"
+              selected={date}
+              onSelect={handleSelect}
+              tone="ocean"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

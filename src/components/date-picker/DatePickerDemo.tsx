@@ -11,15 +11,21 @@ function formatDate(value?: Date) {
   return format(value, "yyyy-MM-dd");
 }
 
-export function DatePickerDemo() {
-  const [singleDate, setSingleDate] = useState<Date | undefined>(new Date());
+type DatePickerDemoProps = {
+  initialNowISO: string;
+};
+
+export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
+  const initialNow = useMemo(() => new Date(initialNowISO), [initialNowISO]);
+
+  const [singleDate, setSingleDate] = useState<Date | undefined>(initialNow);
   const [rangeDate, setRangeDate] = useState<DateRange | undefined>();
 
   const next90Days = useMemo(() => {
-    const end = new Date();
+    const end = new Date(initialNow);
     end.setDate(end.getDate() + 90);
-    return { before: new Date(), after: end };
-  }, []);
+    return { before: initialNow, after: end };
+  }, [initialNow]);
 
   return (
     <section className="grid w-full gap-6 lg:grid-cols-2">
