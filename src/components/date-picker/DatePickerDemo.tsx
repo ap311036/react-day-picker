@@ -28,17 +28,22 @@ function YearJumpNav({
   const startMonth = dayPickerProps.startMonth;
   const endMonth = dayPickerProps.endMonth;
 
-  const toMonthIndex = (date: Date) => date.getFullYear() * 12 + date.getMonth();
+  const toMonthIndex = (date: Date) =>
+    date.getFullYear() * 12 + date.getMonth();
 
-  const previousYearMonth = currentMonth ? addYears(currentMonth, -1) : undefined;
+  const previousYearMonth = currentMonth
+    ? addYears(currentMonth, -1)
+    : undefined;
   const nextYearMonth = currentMonth ? addYears(currentMonth, 1) : undefined;
 
   const canJumpPreviousYear = Boolean(
     previousYearMonth &&
-      (!startMonth || toMonthIndex(previousYearMonth) >= toMonthIndex(startMonth)),
+    (!startMonth ||
+      toMonthIndex(previousYearMonth) >= toMonthIndex(startMonth)),
   );
   const canJumpNextYear = Boolean(
-    nextYearMonth && (!endMonth || toMonthIndex(nextYearMonth) <= toMonthIndex(endMonth)),
+    nextYearMonth &&
+    (!endMonth || toMonthIndex(nextYearMonth) <= toMonthIndex(endMonth)),
   );
 
   const jumpYear = (offset: number) => {
