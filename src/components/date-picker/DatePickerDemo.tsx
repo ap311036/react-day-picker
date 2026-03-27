@@ -28,22 +28,17 @@ function YearJumpNav({
   const startMonth = dayPickerProps.startMonth;
   const endMonth = dayPickerProps.endMonth;
 
-  const toMonthIndex = (date: Date) =>
-    date.getFullYear() * 12 + date.getMonth();
+  const toMonthIndex = (date: Date) => date.getFullYear() * 12 + date.getMonth();
 
-  const previousYearMonth = currentMonth
-    ? addYears(currentMonth, -1)
-    : undefined;
+  const previousYearMonth = currentMonth ? addYears(currentMonth, -1) : undefined;
   const nextYearMonth = currentMonth ? addYears(currentMonth, 1) : undefined;
 
   const canJumpPreviousYear = Boolean(
     previousYearMonth &&
-    (!startMonth ||
-      toMonthIndex(previousYearMonth) >= toMonthIndex(startMonth)),
+    (!startMonth || toMonthIndex(previousYearMonth) >= toMonthIndex(startMonth)),
   );
   const canJumpNextYear = Boolean(
-    nextYearMonth &&
-    (!endMonth || toMonthIndex(nextYearMonth) <= toMonthIndex(endMonth)),
+    nextYearMonth && (!endMonth || toMonthIndex(nextYearMonth) <= toMonthIndex(endMonth)),
   );
 
   const jumpYear = (offset: number) => {
@@ -116,9 +111,7 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
 
   const [singleDate, setSingleDate] = useState<Date | undefined>(initialNow);
   const [rangeDate, setRangeDate] = useState<DateRange | undefined>();
-  const [yearJumpDate, setYearJumpDate] = useState<Date | undefined>(
-    initialNow,
-  );
+  const [yearJumpDate, setYearJumpDate] = useState<Date | undefined>(initialNow);
 
   const next90Days = useMemo(() => {
     const end = new Date(initialNow);
@@ -130,12 +123,8 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
     <section className="grid w-full gap-6 lg:grid-cols-2">
       <article className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
-            單日模式（禁用今天前 + 週末）
-          </h2>
-          <p className="text-sm text-slate-600">
-            今天以前不可選，且週六、週日不可選。
-          </p>
+          <h2 className="text-lg font-semibold text-slate-900">單日模式（禁用今天前 + 週末）</h2>
+          <p className="text-sm text-slate-600">今天以前不可選，且週六、週日不可選。</p>
         </div>
 
         <CustomDatePicker
@@ -151,16 +140,13 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
         />
 
         <p className="text-sm text-slate-700">
-          已選日期:{" "}
-          <span className="font-semibold">{formatDate(singleDate)}</span>
+          已選日期: <span className="font-semibold">{formatDate(singleDate)}</span>
         </p>
       </article>
 
       <article className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
-            單日模式（允許固定日期範圍）
-          </h2>
+          <h2 className="text-lg font-semibold text-slate-900">單日模式（允許固定日期範圍）</h2>
           <p className="text-sm text-slate-600">
             只允許 2026-03-25 到 2026-06-30，超出範圍不可選。
           </p>
@@ -178,16 +164,13 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
         />
 
         <p className="text-sm text-slate-700">
-          已選日期:{" "}
-          <span className="font-semibold">{formatDate(singleDate)}</span>
+          已選日期: <span className="font-semibold">{formatDate(singleDate)}</span>
         </p>
       </article>
 
       <article className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
-            單日模式（禁用中間區間）
-          </h2>
+          <h2 className="text-lg font-semibold text-slate-900">單日模式（禁用中間區間）</h2>
           <p className="text-sm text-slate-600">
             禁用 2026-04-10 與 2026-05-20 之間的日期（含中間日期）。
           </p>
@@ -205,8 +188,7 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
         />
 
         <p className="text-sm text-slate-700">
-          已選日期:{" "}
-          <span className="font-semibold">{formatDate(singleDate)}</span>
+          已選日期: <span className="font-semibold">{formatDate(singleDate)}</span>
         </p>
       </article>
 
@@ -216,12 +198,10 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
 
       <article className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
-            單日模式（含年跳轉按鈕）
-          </h2>
+          <h2 className="text-lg font-semibold text-slate-900">單日模式（含年跳轉按鈕）</h2>
           <p className="text-sm text-slate-600">
-            導覽列提供 {"<<"} / {"<"} / {">"} / {">>"}，可快速切換年或月；到達
-            2025-01 到 2027-12 邊界會自動停用。
+            導覽列提供 {"<<"} / {"<"} / {">"} / {">>"}，可快速切換年或月；到達 2025-01 到 2027-12
+            邊界會自動停用。
           </p>
         </div>
 
@@ -242,17 +222,14 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
         />
 
         <p className="text-sm text-slate-700">
-          已選日期:{" "}
-          <span className="font-semibold">{formatDate(yearJumpDate)}</span>
+          已選日期: <span className="font-semibold">{formatDate(yearJumpDate)}</span>
         </p>
       </article>
 
       <article className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <div>
           <h2 className="text-lg font-semibold text-slate-900">區間模式</h2>
-          <p className="text-sm text-slate-600">
-            選擇起訖日期，並限制在接下來 90 天內。
-          </p>
+          <p className="text-sm text-slate-600">選擇起訖日期，並限制在接下來 90 天內。</p>
         </div>
 
         <CustomDatePicker
@@ -270,9 +247,7 @@ export function DatePickerDemo({ initialNowISO }: DatePickerDemoProps) {
         />
 
         <p className="text-sm text-slate-700">
-          起日:{" "}
-          <span className="font-semibold">{formatDate(rangeDate?.from)}</span> /
-          迄日:{" "}
+          起日: <span className="font-semibold">{formatDate(rangeDate?.from)}</span> / 迄日:{" "}
           <span className="font-semibold">{formatDate(rangeDate?.to)}</span>
         </p>
       </article>
