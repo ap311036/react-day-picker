@@ -1,0 +1,17 @@
+- navigation [ref=e4]:
+  - button "Products" [ref=e5] [cursor=pointer]:
+    - generic [ref=e6]:
+      - text: Products
+      - img [ref=e7]
+  - button "Solutions" [ref=e9] [cursor=pointer]:
+    - generic [ref=e10]:
+      - text: Solutions
+      - img [ref=e11]
+  - button "Developers" [ref=e13] [cursor=pointer]:
+    - generic [ref=e14]:
+      - text: Developers
+      - img [ref=e15]
+  - button "Company" [ref=e17] [cursor=pointer]:
+    - generic [ref=e18]:
+      - text: Company
+      - img [ref=e19]

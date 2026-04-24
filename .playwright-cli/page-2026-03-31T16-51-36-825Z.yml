@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: https://motion.dev
+          - img [ref=e6]
+        - navigation [ref=e11]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Examples" [ref=e14] [cursor=pointer]:
+                - /url: https://motion.dev/examples?platform=react
+              - img [ref=e15]
+            - listitem [ref=e17]:
+              - heading "Mega Menu" [level=1] [ref=e18]
+      - generic [ref=e19]:
+        - button "Open in Cursor" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+          - text: Open in Cursor
+        - button "Source" [ref=e23] [cursor=pointer]:
+          - img [ref=e24]
+          - text: Source
+    - main [ref=e27]:
+      - generic [ref=e29]:
+        - navigation [ref=e30]:
+          - button "Products" [ref=e31] [cursor=pointer]:
+            - generic [ref=e32]:
+              - text: Products
+              - img [ref=e33]
+          - button "Solutions" [ref=e35] [cursor=pointer]:
+            - generic [ref=e36]:
+              - text: Solutions
+              - img [ref=e37]
+          - button "Developers" [ref=e39] [cursor=pointer]:
+            - generic [ref=e40]:
+              - text: Developers
+              - img [ref=e41]
+          - button "Company" [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]:
+              - text: Company
+              - img [ref=e45]
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Platform
+            - generic [ref=e53] [cursor=pointer]: Animation Engine
+            - generic [ref=e54] [cursor=pointer]: Layout System
+            - generic [ref=e55] [cursor=pointer]: Gesture Control
+            - generic [ref=e56] [cursor=pointer]: Scroll Effects
+          - generic [ref=e57]:
+            - generic [ref=e58]: Components
+            - generic [ref=e59] [cursor=pointer]: Accordion
+            - generic [ref=e60] [cursor=pointer]: Tabs
+            - generic [ref=e61] [cursor=pointer]: Dialog
+            - generic [ref=e62] [cursor=pointer]: Tooltip
+          - generic [ref=e63]:
+            - generic [ref=e64]: Tools
+            - generic [ref=e65] [cursor=pointer]: DevTools
+            - generic [ref=e66] [cursor=pointer]: Inspector
+            - generic [ref=e67] [cursor=pointer]: Performance
+    - contentinfo:
+      - navigation
+  - alert [ref=e47]
